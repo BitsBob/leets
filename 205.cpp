@@ -1,11 +1,5 @@
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
-
-struct bit {
-    char c;
-    int n;
-};
 
 class Solution {
 public:
