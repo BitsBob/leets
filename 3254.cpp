@@ -5,16 +5,23 @@ using namespace std;
 int power(vector<int> v) {
     if (v.empty()) return -1;
 
-    int min_val = *min_element(v.begin(), v.end());
-    int max_val = *max_element(v.begin(), v.end());
+    int min_val = v[0];
+    int max_val = v[0];
+    unordered_set<int> seen;
+    seen.insert(v[0]);
 
-    std::set<int> s(v.begin(), v.end());
+    for (int i = 1; i < v.size(); ++i) {
+        if (v[i] < v[i - 1]) return -1;
 
-    if (max_val - min_val == v.size() - 1 && s.size() == v.size() && std::is_sorted(v.begin(), v.end())) {
-        return max_val;
-    } else {
-        return -1;
+        if (!seen.insert(v[i]).second) return -1;
+
+        min_val = min(min_val, v[i]);
+        max_val = max(max_val, v[i]);
     }
+
+    if (max_val - min_val + 1 == v.size()) return max_val;
+
+    return -1;
 } 
 
 class Solution {
