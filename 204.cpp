@@ -12,7 +12,8 @@ public:
 
         sample[0] = sample[1] = false;
 
-        for (int i=2; i<sqrt(n); ++i) {
+        int limit = static_cast<int>(sqrt(n));
+        for (int i=2; i<limit; ++i) {
             if (sample[i]) {
                 for (int j=i*i; j<n; j+=i) {
                     sample[j] = false;
