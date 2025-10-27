@@ -1,6 +1,7 @@
+#include <vector>
 class Solution {
 public:
-    int findDuplicate(vector<int>& nums) {
+    int findDuplicate(std::vector<int>& nums) {
         int s = nums[0];
         int f = nums[0];
         

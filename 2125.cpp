@@ -3,7 +3,7 @@ using namespace std;
 
 class Solution {
 public:
-    int smallestEvenMultiple(int n) {
-        return lcm(n, 2);        
+    int numberOfBeams(vector<string>& bank) {
+        
     }
 };
